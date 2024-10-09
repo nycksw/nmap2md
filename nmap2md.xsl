@@ -7,7 +7,7 @@
     <xsl:template match="/nmaprun">
         <!-- Loop through each host -->
         <xsl:for-each select="host">
-            <xsl:text>### TCP&#10;&#10;- Target: `</xsl:text>
+            <xsl:text>#### TCP&#10;&#10;- Target: `</xsl:text>
             <xsl:value-of select="hostnames/hostname/@name" />
             <xsl:if test="hostnames/hostname"><xsl:text> </xsl:text></xsl:if>
             <xsl:value-of select="address/@addr" />
@@ -18,7 +18,7 @@
 
             <!-- Loop through each port -->
             <xsl:for-each select="ports/port">
-                <xsl:text>#### </xsl:text>
+                <xsl:text>##### </xsl:text>
                 <xsl:value-of select="@portid" />
                 <xsl:text>/</xsl:text>
                 <xsl:value-of select="@protocol" />
